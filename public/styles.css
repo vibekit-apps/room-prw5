@@ -1,0 +1,55 @@
+/* Design system. Edit these tokens and the whole page follows —
+   change --accent once rather than hunting hex codes through the markup. */
+:root {
+  --bg: #0a0a0f;
+  --fg: #ffffff;
+  --mute: #9ca3af;
+  --card: #13131a;
+  --border: #27272f;
+  --accent: #a78bfa;
+  --radius: 12px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at top, #1a0b2e 0%, var(--bg) 50%) fixed;
+  color: var(--fg);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 880px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+.topbar { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.wordmark { display: inline-flex; align-items: center; gap: 10px; color: var(--fg); font-weight: 600; font-size: 17px; text-decoration: none; letter-spacing: -.01em; }
+.wordmark img { width: 32px; height: 32px; border-radius: 7px; display: block; }
+
+.status { display: inline-flex; align-items: center; gap: .5rem; margin-left: auto; padding: .375rem .75rem; background: var(--card); border: 1px solid var(--border); border-radius: 999px; font-size: .75rem; color: var(--mute); }
+.status .dot { width: 6px; height: 6px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 8px #22c55e; }
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -.03em; margin-bottom: 1rem; word-break: break-word; }
+.lead { font-size: 1.0625rem; color: var(--mute); margin-bottom: 2.5rem; max-width: 560px; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.card { padding: 1.5rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); }
+.card h3 { font-size: .9375rem; font-weight: 600; margin-bottom: .375rem; letter-spacing: -.005em; }
+.card p { font-size: .875rem; color: var(--mute); line-height: 1.55; }
+.card .icon { width: 36px; height: 36px; border-radius: 9px; background: rgba(167, 139, 250, .1); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: var(--accent); }
+.card .icon svg { width: 18px; height: 18px; }
+
+/* 44px min height keeps taps comfortable on phones, where most users are. */
+.cta { display: inline-flex; align-items: center; gap: .5rem; padding: .875rem 1.375rem; background: var(--accent); color: #0a0a0f; border-radius: 9px; font-size: .9375rem; font-weight: 600; text-decoration: none; transition: transform .15s ease, background .15s ease; min-height: 44px; }
+.cta:hover { transform: translateY(-1px); background: #c4b5fd; }
+
+footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); font-size: .75rem; color: var(--mute); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+footer a { color: var(--mute); text-decoration: none; }
+footer a:hover { color: var(--fg); }
+
+@media (max-width: 480px) {
+  .wrap { padding: 2rem 1.25rem; }
+  .topbar { margin-bottom: 2rem; }
+  .cta { width: 100%; justify-content: center; }
+}

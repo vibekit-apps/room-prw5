@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your app</title>
+<link rel="icon" href="https://vibekit.bot/public/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="https://vibekit.bot/public/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://vibekit.bot/public/favicon-16.png">
+<link rel="apple-touch-icon" href="https://vibekit.bot/public/apple-touch-icon.png">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="https://vibekit.bot" class="wordmark"><img src="https://vibekit.bot/public/Group2.png" alt=""> VibeKit</a>
+    <div class="status"><span class="dot"></span>Your app is live</div>
+  </div>
+
+  <!-- Placeholder content from the starter. Replace it with the real app. -->
+  <h1 id="app-name">Your app</h1>
+  <p class="lead">This is your starter. Open the chat with your AI agent and tell it what to build — the page updates as you go.</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <h3>Chat to customize</h3>
+      <p>Describe what you want. Your agent edits the code and redeploys automatically.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <h3>Iterate fast</h3>
+      <p>Every change you ask for ships in seconds, with full source on GitHub.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+      <h3>Yours to keep</h3>
+      <p>The code is yours. Connect a custom domain or fork it whenever you like.</p>
+    </div>
+  </div>
+
+  <a class="cta" id="open-chat" href="https://app.vibekit.bot">Open chat
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  </a>
+
+  <footer>
+    <span>Built with VibeKit</span>
+    <a href="https://vibekit.bot">vibekit.bot</a>
+  </footer>
+</div>
+
+<script>
+  // Name the page after the subdomain it's served from, so this file stays
+  // static (no build step, no server templating).
+  var sub = location.hostname.split('.')[0];
+  if (sub && sub !== 'localhost') {
+    document.getElementById('app-name').textContent = sub;
+    document.title = sub;
+    document.getElementById('open-chat').href = 'https://app.vibekit.bot/app/' + sub;
+  }
+</script>
+</body>
+</html>

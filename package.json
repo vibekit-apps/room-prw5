@@ -1,0 +1,9 @@
+{
+  "name": "blank-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zero-dependency Node starter: static site + JSON API + durable storage.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
