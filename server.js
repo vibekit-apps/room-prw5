@@ -27,6 +27,7 @@ const MIME = {
 //   },
 const routes = {
   'GET /health': (req, res) => json(res, { status: 'ok', uptime: process.uptime() }),
+  ...require('./lib/auth')(readBody, json),
 };
 
 function json(res, data, status = 200) {
@@ -127,7 +128,7 @@ http.createServer(async (req, res) => {
     console.error(`${req.method} ${pathname} failed:`, err.message);
     if (res.headersSent) return;
     if (err.status === 413) json(res, { error: 'Too large: the limit is 10 MB. Try a smaller photo.' }, 413);
-    else if (err.status === 400) json(res, { error: err.message }, 400);
+    else if (err.status >= 400 && err.status < 500) json(res, { error: err.message }, err.status);
     else json(res, { error: 'Server error' }, 500);
   }
-}).listen(PORT, () => console.log(`Listening on port ${PORT}`));
+}).listen(PORT, '0.0.0.0', () => console.log(`Listening on port ${PORT}`));
