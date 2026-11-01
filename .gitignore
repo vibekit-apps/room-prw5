@@ -4,3 +4,25 @@ node_modules/
 *.log
 .DS_Store
 lib/data/*.json
+
+# VibeKit internal v7 — agent state, never deployed
+.openclaw/
+.vibekit/
+memory/
+node_modules/
+node_modules.next/
+openclaw-workspace-state.json
+openclaw-workspace-state.json.*.tmp
+.nfs*
+openclaw-mcp.json
+.gitconfig
+.git-credential-helper.sh
+.vibekit-env
+.env
+.vibekit-attachments/
+.worktrees/
+STATUS.md
+qa-reports/
+.vk-write-*
+.vktmp-*
+*.vktmp-*
